@@ -6,16 +6,16 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AddressComponent } from '../adresse-form/adresse.component';
+import { AddressFormComponent } from '../adresse-form/adresse-form.component';
 
 
 @Component({
-  selector: 'app-person',
+  selector: 'app-person-form',
   template: `
     <h2>Person Form</h2>
     <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
       <input formControlName="name" placeholder="Name" />
-      <app-address formControlName="address"></app-address>
+      <app-address-form formControlName="address"></app-address-form>
 
       <button type="submit" [disabled]="!personForm.valid">Submit</button>
       <button type="button" (click)="onReset()">Reset</button>
@@ -24,9 +24,9 @@ import { AddressComponent } from '../adresse-form/adresse.component';
     <pre>{{ personForm.value | json }}</pre>
   `,
   standalone: true,
-  imports: [ReactiveFormsModule, AddressComponent, JsonPipe],
+  imports: [ReactiveFormsModule, AddressFormComponent, JsonPipe],
 })
-export class PersonComponent {
+export class PersonFormComponent {
   personForm: FormGroup;
 
   constructor(private fb: FormBuilder) {

@@ -14,7 +14,7 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-address',
+  selector: 'app-address-form',
   template: `
     <h3>Address</h3>
     <form [formGroup]="addressForm">
@@ -30,19 +30,19 @@ import {
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => AddressComponent),
+      useExisting: forwardRef(() => AddressFormComponent),
       multi: true,
     },
     {
       provide: NG_VALIDATORS,
-      useExisting: forwardRef(() => AddressComponent),
+      useExisting: forwardRef(() => AddressFormComponent),
       multi: true,
     },
   ],
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule],
 })
-export class AddressComponent
+export class AddressFormComponent
   implements ControlValueAccessor, Validator, OnInit
 {
   addressForm: FormGroup;

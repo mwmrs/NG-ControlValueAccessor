@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PersonComponent } from './person-form/person.component';
+import { PersonFormComponent } from './person-form/person-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PersonComponent],
+  imports: [RouterOutlet, PersonFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
